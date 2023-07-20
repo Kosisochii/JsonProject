@@ -1,0 +1,74 @@
+[ 
+    {
+        "name": "Pizza",
+        "ingredients": [
+            "Okra",
+            "Carrot",
+            "cucumber",
+            "Voodka",
+            "Chicken",
+            "Turkey"
+        ],
+        "instruction": [
+            "Pour your hot water",
+            "Add your onions",
+            "Add your filter beans",
+            "Stir to your liking",
+            "Remove the pot of joy"
+        ]
+   },
+   {
+        "name": "Sushi",
+        "ingredients": [
+            "Carrot",
+            "Chicken",
+            "cucumber",
+            "Voodka",
+            "Chicken",
+            "Turkey"
+        ],
+        "instruction": [
+            "fill your hot water",
+            "Add your onions",
+            "Add your filter beans",
+            "Stir to your liking",
+            "Remove the pot of joy"
+        ]
+   },
+   {
+    "name": "Sharwama",
+    "ingredients": [
+        "Blueberry",
+        "Carrot",
+        "cucumber",
+        "Voodka",
+        "Chicken",
+        "Turkey"
+    ],
+    "instruction": [
+        "Push your hot water",
+        "Add your onions",
+        "Add your filter beans",
+        "Stir to your liking",
+        "Remove the pot of joy"
+    ]
+   },
+   {
+    "name": "Budweizer",
+    "ingredients": [
+        "Chicken",
+        "Carrot",
+        "cucumber",
+        "Voodka",
+        "Chicken",
+        "Turkey"
+    ],
+    "instruction": [
+        "Kill your hot water",
+        "Add your onions",
+        "Add your filter beans",
+        "Stir to your liking",
+        "Remove the pot of joy"
+    ]
+   }
+]

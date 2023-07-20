@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+    .slider-container {
+        display: flex;
+  width: 100%; /* Adjust container size as needed */
+  overflow: hidden;
+}
+.sliding-image {
+  width: 20%; /* Adjust image size as needed */
+  transition: transform 0.3s ease; /* Adjust animation duration as needed */
+}
+ </style>
+<body>
+    <div class="slider-container">
+        <img src="images/bt1.jpg" class="sliding-image" alt="Sliding Image 1">
+        <img src="images/bt2.jpg" class="sliding-image" alt="Sliding Image 2">
+        <img src="images/bt3.jpg" class="sliding-image" alt="Sliding Image 3">
+        <img src="images/bt4.jpg" class="sliding-image" alt="Sliding Image 3">
+        <img src="images/bt2.jpg" class="sliding-image" alt="Sliding Image 3">
+    </div>
+      
+<script>
+    // Get the sliding image elements
+var slidingImages = document.querySelectorAll('.sliding-image');
+
+// Set the initial position
+var offsetX = 0;
+
+// Update the position at each animation frame
+function slideImages() {
+  offsetX -= 1; // Adjust the sliding speed as needed
+
+  slidingImages.forEach(function(image) {
+    image.style.transform = 'translateX(' + offsetX + 'px)';
+  });
+
+  // Request the next animation frame
+  requestAnimationFrame(slideImages);
+}
+
+// Start the sliding animation
+slideImages();
+
+</script>
+</body>
+</html>

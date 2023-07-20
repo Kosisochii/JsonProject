@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-container {
+  width: 100%; /* Adjust container size as needed */
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.3s ease; /* Adjust animation duration as needed */
+}
+
+.slider-slide {
+  flex-shrink: 0;
+  width: 100%; /* Adjust slide size as needed */
+}
+
+.sliding-image {
+  width: 100%; /* Adjust image size as needed */
+  display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-track">
+          <div class="slider-slide">
+            <img src="images/bt2.jpg" class="sliding-image" alt="Sliding Image 1">
+          </div>
+          <div class="slider-slide">
+            <img src="images/bt3.jpg" class="sliding-image" alt="Sliding Image 2">
+          </div>
+          <div class="slider-slide">
+            <img src="images/bt4.jpg" class="sliding-image" alt="Sliding Image 3">
+          </div>
+        </div>
+      </div>
+      
+
+      <script>
+        // Get the sliding elements
+var sliderContainer = document.querySelector('.slider-container');
+var sliderTrack = document.querySelector('.slider-track');
+var sliderSlides = Array.from(document.querySelectorAll('.slider-slide'));
+
+// Set the initial position and other variables
+var slideIndex = 0;
+var slideWidth = sliderContainer.offsetWidth;
+var trackWidth = slideWidth * sliderSlides.length;
+
+// Duplicate the slider slides for continuous scrolling effect
+sliderTrack.innerHTML += sliderTrack.innerHTML;
+
+// Start the sliding animation
+requestAnimationFrame(slideImages);
+
+// Update the position at each animation frame
+function slideImages() {
+  // Calculate the new position
+  slideIndex--;
+  var translateX = slideIndex * slideWidth;
+
+  // Check if we need to wrap around to the beginning
+  if (Math.abs(slideIndex) >= sliderSlides.length) {
+    slideIndex = 0;
+    translateX = 0;
+  }
+
+  // Apply the transform to the track element
+  sliderTrack.style.transform = 'translateX(' + translateX + 'px)';
+
+  // Request the next animation frame
+  requestAnimationFrame(slideImages);
+}
+
+      </script>
+</body>
+</html>

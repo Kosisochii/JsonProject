@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Image Carousel</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .carousel-inner .carousel-item img {
+      width: 700px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+    <div id="imageCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <img src="images/bt1.jpg" class="d-block mx-auto" alt="Image 1">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <img src="images/bt2.jpg" class="d-block mx-auto" alt="Image 2">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <img src="images/bt3.jpg" class="d-block mx-auto" alt="Image 3">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <img src="images/bt4.jpg" class="d-block mx-auto" alt="Image 3">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <img src="images/bt2.jpg" class="d-block mx-auto" alt="Image 3">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+      
+      
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#imageCarousel').carousel();
+    });
+  </script>
+</body>
+</html>

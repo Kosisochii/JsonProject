@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .slider-container {
+            width: 100%; /* Adjust container size as needed */
+            overflow: hidden;
+            }
+            .slider-track {
+            display: flex;
+            transition: transform 0.3s linear; /* Adjust animation duration as needed */
+            }
+            .sliding-image {
+            width: 500px; /* Adjust image size as needed */
+            }
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-track">
+          <img src="images/bt1.jpg" class="sliding-image" alt="Sliding Image 1">
+          <img src="images/bt2.jpg" class="sliding-image" alt="Sliding Image 2">
+          <img src="images/bt3.jpg" class="sliding-image" alt="Sliding Image 3">
+          <img src="images/bt4.jpg" class="sliding-image" alt="Sliding Image 3">
+          <img src="images/bt2.jpg" class="sliding-image" alt="Sliding Image 3">
+          <img src="images/bt3.jpg" class="sliding-image" alt="Sliding Image 3">
+
+        </div>
+      </div>
+
+      <script>
+        // Get the sliding elements
+var sliderContainer = document.querySelector('.slider-container');
+var sliderTrack = document.querySelector('.slider-track');
+var slidingImages = Array.from(document.querySelectorAll('.sliding-image'));
+
+// Set the initial position and other variables
+var offsetX = 0;
+var imageWidth = slidingImages[0].offsetWidth;
+var trackWidth = imageWidth * slidingImages.length;
+
+// Duplicate the sliding images for continuous scrolling effect
+slidingImages.forEach(function(image) {
+  var clone = image.cloneNode(true);
+  sliderTrack.appendChild(clone);
+});
+
+// Update the position at each animation frame
+function slideImages() {
+  offsetX -= 1; // Adjust the sliding speed as needed
+
+  // Reset the position when the entire track has scrolled
+  if (offsetX <= -trackWidth) {
+    offsetX = 0;
+  }
+
+  sliderTrack.style.transform = 'translateX(' + offsetX + 'px)';
+
+  // Request the next animation frame
+  requestAnimationFrame(slideImages);
+}
+
+// Start the sliding animation
+slideImages();
+
+      </script>
+      
+</body>
+</html>

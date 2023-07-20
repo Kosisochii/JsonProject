@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-container {
+  width: 800px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.current-image {
+  display: block;
+  width: 200px;
+  height: 150px;
+  margin: 0 20px;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <img class="current-image" src="images/bt4.jpg" />
+        <a href="#" class="prev-button">Previous</a>
+        <a href="#" class="next-button">Next</a>
+        <a href="#" class="jump-button">Jump to Image</a>
+      </div>
+      
+      <script>
+        var sliderContainer = document.querySelector(".slider-container");
+var currentImage = document.querySelector(".current-image");
+var prevButton = document.querySelector(".prev-button");
+var nextButton = document.querySelector(".next-button");
+var jumpButton = document.querySelector(".jump-button");
+
+var images = [
+  "images/bt1.jpg",
+  "images/bt2.jpg",
+  "images/bt3.jpg",
+  "images/bt4.jpg",
+  "images/bt2.jpg",
+];
+
+var currentIndex = 0;
+
+function displayImage() {
+  currentImage.src = images[currentIndex];
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  displayImage();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  displayImage();
+}
+
+function jumpToImage(index) {
+  currentIndex = index;
+  displayImage();
+}
+
+prevButton.addEventListener("click", prevImage);
+nextButton.addEventListener("click", nextImage);
+jumpButton.addEventListener("click", function(event) {
+  var index = parseInt(event.target.textContent);
+  jumpToImage(index);
+});
+
+setInterval(nextImage, 3000); // Autoplay the slider every 3 seconds.
+
+      </script>
+</body>
+</html>
